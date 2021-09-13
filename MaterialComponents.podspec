@@ -1457,7 +1457,8 @@ Pod::Spec.new do |mdc|
       "components/#{component.base_name}/src/*.{h,m}",
       "components/#{component.base_name}/src/private/*.{h,m}"
     ]
-
+    component.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+    component.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
     component.dependency "MaterialComponents/AnimationTiming"
     component.dependency "MaterialComponents/Buttons"
     component.dependency "MaterialComponents/Elevation"
